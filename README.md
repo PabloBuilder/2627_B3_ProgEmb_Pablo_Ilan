@@ -14,7 +14,7 @@ Notre nom d’hôte est « C106-IH-Pc » et notre nom d’utilisateur est « pab
 
 5) Si la vitesse est différente, les bits sont lus au mauvais rythme et ne peuvent pas être décodés correctement. La communication échoue et le terminal affiche des caractères incompréhensibles.
 
-6)
+6)![Schéma de câblage USB-UART Raspberry Pi](20260921_124841.webp)
 
 
 Réflexion : La connexion UART utilise un adaptateur USB-Série branché directement sur les broches de la carte, avec le port série activé et un terminal réglé sur la bonne vitesse. Son grand avantage est de fonctionner sans réseau dès le démarrage, mais sa limite reste la nécessité d'un câble et d'une proximité physique.
@@ -28,8 +28,16 @@ Réflexion :
 - Oui nous avons bien pu nous connecté a internet. 
 - Sur le PC de la salle, n'étant pas administrateurs, nous ne possédons pas les droits "sudo" (les privilèges suprêmes). En revanche, comme nous avons flashé la carte SD avec un système d'exploitation dont nous sommes les seuls administrateurs, nous connaissons le mot de passe. Nous pouvons donc y exécuter la commande "sudo" grâce au mot de passe configuré lors du flashage.
 
-## Schéma de câblage
 
-![Schéma de câblage USB-UART Raspberry Pi](20260921_124841.webp)
+Réflexion (Sécuriser SSH avec une clé) : 
+
+1) La clé privée se trouve sur notre PC et la clé publique est installée sur la Raspberry Pi.
+2) La clé privée doit rester sur le PC car elle sert à prouver son identité.
+3) Le fichier authorized_keys contient la liste des clés publiques qui sont autorisées à se connecter à la Raspberry Pi sans mot de passe.
+4) Le mot de passe protège le compte utilisateur sur la Raspberry Pi, tandis que la phrase secrète sert à chiffrer et déverrouiller la clé privée directement sur le PC.
+5) Il faut tester la connexion dans un deuxième terminal pour vérifier que la clé SSH marche bien. Si on s'est trompé dans la clé et qu'on a déjà coupé les mots de passe, on se retrouve bloqué dehors. En gardant le premier terminal ouvert avec nos identifiants, on a toujours une sécurité pour corriger l'erreur si besoin.
+6) Il faut mettre ces droits pour que personne d'autre ne puisse lire ou modifier nos clés. Le dossier .ssh en 700 et le fichier authorized_keys en 600 garantissent que seul le propriétaire a l'accès. Si les droits sont trop ouverts, SSH refuse la connexion par sécurité.
+
+
 
 
