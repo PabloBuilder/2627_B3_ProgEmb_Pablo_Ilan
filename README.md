@@ -28,4 +28,8 @@ Réflexion :
 - Oui nous avons bien pu nous connecté a internet. 
 - Sur le PC de la salle, n'étant pas administrateurs, nous ne possédons pas les droits "sudo" (les privilèges suprêmes). En revanche, comme nous avons flashé la carte SD avec un système d'exploitation dont nous sommes les seuls administrateurs, nous connaissons le mot de passe. Nous pouvons donc y exécuter la commande "sudo" grâce au mot de passe configuré lors du flashage.
 
+## Schéma de câblage
+
+![Schéma de câblage USB-UART Raspberry Pi](20260921_124841.webp)
+
 
