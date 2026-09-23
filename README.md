@@ -49,4 +49,7 @@ Question de réflexion TP2 :
 4) Les programmes de TP doivent toujours fermer ou nettoyer les interfaces matérielles pour éviter qu'un composant reste activé par erreur.
 5) Le driver va nous permettre de faire le pont entre la partie logicielle et le matériel de la Raspberry Pi. Et le fait de séparer main.py, config.py et le driver va permettre de rendre le programme plus clair et plus facile à modifier.
 
+Image du TP2 : 
 ![Image2](20260923_092212.jpg)
+![Image3](20260923_092411.jpg)
+![Image4](20260923_092731.jpg)
