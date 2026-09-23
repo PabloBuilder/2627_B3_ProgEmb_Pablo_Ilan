@@ -41,3 +41,12 @@ Réflexion (Sécuriser SSH avec une clé) :
 
 
 
+Question de réflexion TP2 : 
+
+1) Un moteur ne doit pas être branché directement sur une broche GPIO car elle ne fournit pas un courant suffisant. Le moteur demande une intensité qui grillerait la Raspberry Pi. C'est pour cela que l'on utilise un driver.
+2) En I2C et en SPI, le principe de sélection n'est pas le même. En I2C, le composant est sélectionné par son adresse numérique, alors qu'en SPI il y a un fil dédié à chaque composant et il utilise une ligne physique qui lui est dédiée.
+3) Les deux appareils doivent utiliser la même vitesse pour que les bits soient bien interprétés, comme il n'y a pas de signal d'horloge.
+4) Les programmes de TP doivent toujours fermer ou nettoyer les interfaces matérielles pour éviter qu'un composant reste activé par erreur.
+5) Le driver va nous permettre de faire le pont entre la partie logicielle et le matériel de la Raspberry Pi. Et le fait de séparer main.py, config.py et le driver va permettre de rendre le programme plus clair et plus facile à modifier.
+
+![Image2](20260923_092212.jpg)
